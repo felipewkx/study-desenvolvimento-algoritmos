@@ -81,6 +81,18 @@ function iniciarTotem() {
         console.log("Sua altura é: " + altura + " . Você tem altura para curtir a Montanha!")
     }
 
+
+    // Adição PROBLEMA CARDÍACO
+
+    let cardiaco = readline.question("Voce tem problemas cardiacos? (sim/nao): ");
+    let temProblema = (cardiaco === 'sim' || cardiaco === 's');
+
+    if (cardiaco !== 'sim' && cardiaco !== 's' && cardiaco !== 'nao' && cardiaco !== 'n') {
+        console.log("Resposta inválida. Reinicie o sistema.");
+        return;
+    }
+
+
     // 4. DIGITE ABAIXO AS REGRAS DE NEGÓCIO (SE / SENÃO) DELINEADAS NO GUIA
     // **Acesso Permitido (Sucesso):**
     //    * *Critério:* Cumpriu a idade mínima e a altura mínima.
@@ -113,6 +125,12 @@ function iniciarTotem() {
 
     if (idade < 12 && altura < 1.50) {
         console.log("[ACESSO NEGADO] - " + nome + ", o acesso foi recusado porque você não possui a idade mínima (12 anos) e nem a altura mínima (1.50m).");
+    }
+
+    if (temProblema) {
+        console.log("Acesso negado: Risco cardiaco.");
+    } else {
+        console.log("Acesso liberado!");
     }
 
 }
