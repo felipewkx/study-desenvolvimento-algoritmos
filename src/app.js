@@ -82,7 +82,39 @@ function iniciarTotem() {
     }
 
     // 4. DIGITE ABAIXO AS REGRAS DE NEGÓCIO (SE / SENÃO) DELINEADAS NO GUIA
+    // **Acesso Permitido (Sucesso):**
+    //    * *Critério:* Cumpriu a idade mínima e a altura mínima.
+    //    * *Mensagem:* `"Olá, [Nome]! Cadastro validado com sucesso. Seu acesso foi PERMITIDO. Divirta-se na MegaloDon!"`
+    // 2. **Bloqueio apenas por Idade:**
+    //    * *Critério:* Tem a altura necessária (>= 1.50), mas não tem a idade necessária (< 12).
+    //    * *Mensagem:* `"[ACESSO NEGADO] - [Nome], você possui a altura necessária, mas não atingiu a idade mínima de 12 anos."`
+    // 3. **Bloqueio apenas por Altura:**
+    //    * *Critério:* Tem a idade necessária (>= 12), mas não tem a altura necessária (< 1.50).
+    //    * *Mensagem:* `"[ACESSO NEGADO] - [Nome], você possui a idade necessária, mas não atingiu a altura mínima de 1.50m."`
+    // 4. **Bloqueio por Ambos os Motivos:**
+    //    * *Critério:* Não tem nem a idade (< 12) e nem a altura (< 1.50).
+    //    * *Mensagem:* `"[ACESSO NEGADO] - [Nome], o acesso foi recusado porque você não possui a idade mínima (12 anos) e nem a altura mínima (1.50m)."`
 
+    // 4. DIGITE ABAIXO AS REGRAS DE NEGÓCIO (SE / SENÃO) DELINEADAS NO GUIA
+
+
+    if (idade >= 12 && altura >= 1.50) {
+        console.log("Olá, " + nome + "! Cadastro validado com sucesso. Seu acesso foi PERMITIDO. Divirta-se na MegaloDon!");
+    }
+
+
+    if (altura >= 1.50 && idade < 12) {
+        console.log("[ACESSO NEGADO] - " + nome + ", você possui a altura necessária, mas não atingiu a idade mínima de 12 anos.");
+    }
+
+
+    if (idade >= 12 && altura < 1.50) {
+        console.log("[ACESSO NEGADO] - " + nome + ", você possui a idade necessária, mas não atingiu a altura mínima de 1.50m.");
+    }
+
+    if (idade < 12 && altura < 1.50) {
+        console.log("[ACESSO NEGADO] - " + nome + ", o acesso foi recusado porque você não possui a idade mínima (12 anos) e nem a altura mínima (1.50m).");
+    }
 
 }
 
