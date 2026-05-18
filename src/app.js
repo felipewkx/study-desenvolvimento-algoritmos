@@ -72,7 +72,14 @@ function iniciarTotem() {
     }
 
     // 3. DIGITE ABAIXO A ENTRADA E VALIDAÇÃO DA ALTURA
+    let altura = readline.questionInt("Digite a altura do cliente: ");
 
+    if (altura <= 0) {
+        console.log("altura invalida. Reinicie o sistema.");
+        return;
+    } else {
+        console.log("Sua altura é: " + altura + " . Você pode curtir a Montanha!")
+    }
 
     // 4. DIGITE ABAIXO AS REGRAS DE NEGÓCIO (SE / SENÃO) DELINEADAS NO GUIA
 
