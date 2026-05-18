@@ -68,17 +68,17 @@ function iniciarTotem() {
         console.log("Idade invalida. Reinicie o sistema.");
         return;
     } else {
-        console.log("Sua idade é: " + idade + " . Você pode curtir a Montanha!")
+        console.log("Sua idade é: " + idade + " . Você tem idade para curtir a Montanha!")
     }
 
     // 3. DIGITE ABAIXO A ENTRADA E VALIDAÇÃO DA ALTURA
-    let altura = readline.questionInt("Digite a altura do cliente: ");
+    let altura = readline.questionFloat("Digite a altura do cliente: ");
 
     if (altura <= 0) {
         console.log("altura invalida. Reinicie o sistema.");
         return;
     } else {
-        console.log("Sua altura é: " + altura + " . Você pode curtir a Montanha!")
+        console.log("Sua altura é: " + altura + " . Você tem altura para curtir a Montanha!")
     }
 
     // 4. DIGITE ABAIXO AS REGRAS DE NEGÓCIO (SE / SENÃO) DELINEADAS NO GUIA
@@ -96,7 +96,6 @@ function iniciarTotem() {
     //    * *Mensagem:* `"[ACESSO NEGADO] - [Nome], o acesso foi recusado porque você não possui a idade mínima (12 anos) e nem a altura mínima (1.50m)."`
 
     // 4. DIGITE ABAIXO AS REGRAS DE NEGÓCIO (SE / SENÃO) DELINEADAS NO GUIA
-
 
     if (idade >= 12 && altura >= 1.50) {
         console.log("Olá, " + nome + "! Cadastro validado com sucesso. Seu acesso foi PERMITIDO. Divirta-se na MegaloDon!");
