@@ -1,3 +1,37 @@
+// const readline = require('readline-sync');
+
+// function criarMenu(titulo, opcoes) {
+//     while (true) {
+//         console.log(`\n==============================`);
+//         console.log(`    ${titulo.toUpperCase()}    `);
+//         console.log(`==============================`);
+
+//         opcoes.forEach((opt, index) => {
+//             console.log(`${index + 1}. ${opt.texto}`);
+//         });
+//         console.log(`0. Sair`);
+//         console.log(`==============================`);
+
+//         const escolha = readline.question("Escolha uma opcao: ");
+
+//         if (escolha === '0') {
+//             console.log("Encerrando sistema...");
+//             break;
+//         }
+
+//         const indice = parseInt(escolha) - 1;
+//         const opcaoSelecionada = opcoes[indice];
+
+//         if (opcaoSelecionada && typeof opcaoSelecionada.acao === 'function') {
+//             opcaoSelecionada.acao(readline);
+//         } else {
+//             console.log("⚠️ Opcao invalida!");
+//         }
+//     }
+// }
+
+// module.exports = { criarMenu };
+
 import readline from 'readline-sync';
 
 // =================================================================
@@ -15,6 +49,11 @@ function iniciarTotem() {
 
     // 1. FAÇA AQUI A VALIDAÇÃO DO NOME (Se está vazio)
 
+    if (nome == "") {
+        console.log("Nome invalido. Reinicie o sistema.");
+    } else {
+        console.log("Bem-vindo " + nome);
+    }
 
     // =============================================================
     // DICA PARA OS PRÓXIMOS PASSOS:
@@ -23,7 +62,14 @@ function iniciarTotem() {
     // =============================================================
 
     // 2. DIGITE ABAIXO A ENTRADA E VALIDAÇÃO DA IDADE
+    let idade = readline.questionInt("Digite a idade do cliente: ");
 
+    if (idade <= 0) {
+        console.log("Idade invalida. Reinicie o sistema.");
+        return;
+    } else {
+        console.log("Sua idade é: " + idade + " . Você pode curtir a Montanha!")
+    }
 
     // 3. DIGITE ABAIXO A ENTRADA E VALIDAÇÃO DA ALTURA
 
