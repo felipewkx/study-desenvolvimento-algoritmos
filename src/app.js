@@ -109,6 +109,13 @@ function iniciarTotem() {
 
     // 4. DIGITE ABAIXO AS REGRAS DE NEGÓCIO (SE / SENÃO) DELINEADAS NO GUIA
 
+    if (temProblema) {
+        console.log("Acesso negado: Risco cardíaco. Pela sua segurança, você não pode prosseguir!");
+        return;
+    } else {
+        console.log("Acesso liberado!");
+    }
+
     if (idade >= 12 && altura >= 1.50) {
         console.log("Olá, " + nome + "! Cadastro validado com sucesso. Seu acesso foi PERMITIDO. Divirta-se na MegaloDon!");
     }
@@ -127,11 +134,6 @@ function iniciarTotem() {
         console.log("[ACESSO NEGADO] - " + nome + ", o acesso foi recusado porque você não possui a idade mínima (12 anos) e nem a altura mínima (1.50m).");
     }
 
-    if (temProblema) {
-        console.log("Acesso negado: Risco cardiaco.");
-    } else {
-        console.log("Acesso liberado!");
-    }
 
 }
 
