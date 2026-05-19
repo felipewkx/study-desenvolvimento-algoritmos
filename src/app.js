@@ -72,7 +72,8 @@ function iniciarTotem() {
     }
 
     // 3. DIGITE ABAIXO A ENTRADA E VALIDAÇÃO DA ALTURA
-    let altura = readline.questionFloat("Digite a altura do cliente: ");
+    let alturaDigitada = readline.question("Digite a altura do cliente: ");
+    let altura = parseFloat(alturaDigitada.replace(',', '.'));
 
     if (altura <= 0) {
         console.log("altura invalida. Reinicie o sistema.");
