@@ -87,8 +87,8 @@ function iniciarTotem() {
     let cardiaco = readline.question("Voce tem problemas cardiacos? (sim/nao): ");
     let temProblema = (cardiaco === 'sim' || cardiaco === 's');
 
-    if (cardiaco !== 'sim' && cardiaco !== 's' && cardiaco !== 'nao' && cardiaco !== 'n') {
-        console.log("Resposta inválida. Reinicie o sistema.");
+    if (!(cardiaco === "sim" || cardiaco === "s" || cardiaco === "nao" || cardiaco === "n")) {
+        console.log("Resposta inválida.");
         return;
     }
 
