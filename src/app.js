@@ -75,12 +75,12 @@ function iniciarTotem() {
     console.clear();
 
     if (temProblema) {
-        console.log("Acesso negado: Risco cardíaco. Pela sua segurança, você não pode prosseguir!");
+        console.log("[ACESSO NEGADO] Risco cardíaco. Pela sua segurança, você não pode prosseguir!");
         return;
     }
 
     if (idade >= 12 && altura >= 1.50) {
-        console.log("Olá, " + nome + "!\nCadastro validado com sucesso!\nVocê se registrou com:\n" + altura + "m de altura,\n" + idade + " anos de idade,\ne Sem Problemas Cardiacos!\nPortanto, seu acesso foi PERMITIDO! Divirta-se na MegaloDon!");
+        console.log("Olá, " + nome + "!\n[CADASTRO REALIZADO COM SUCESSO]\nVocê se registrou com:\n" + altura + "m de altura,\n" + idade + " anos de idade,\ne Sem Problemas Cardiacos!\nPortanto, seu acesso foi PERMITIDO! Divirta-se na MegaloDon!");
     }
 
     if (altura >= 1.50 && idade < 12) {
