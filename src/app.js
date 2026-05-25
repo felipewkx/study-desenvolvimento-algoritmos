@@ -88,7 +88,7 @@ function iniciarTotem() {
     }
 
     if (idade >= 12 && altura >= 1.50) {
-        console.log("Olá," + nome + "! Cadastro validado com sucesso. Você se registrou com " + altura + "m de altura\ne com " + idade + " anos de idade, portanto, seu acesso foi PERMITIDO! Divirta-se na MegaloDon!")
+        console.log("Olá, " + nome + "! Cadastro validado com sucesso! Você se registrou com " + altura + "m de altura\ne com " + idade + " anos de idade, portanto, seu acesso foi PERMITIDO! Divirta-se na MegaloDon!")
     }
 
 
