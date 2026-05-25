@@ -35,7 +35,7 @@ function iniciarTotem() {
         console.log("Idade invalida. Reinicie o sistema.");
         return;
     } else {
-        console.log("Sua idade é: " + idade)
+        console.log("Sua idade é: " + idade + " anos.")
     }
 
     // 3. DIGITE ABAIXO A ENTRADA E VALIDAÇÃO DA ALTURA
@@ -51,7 +51,7 @@ function iniciarTotem() {
         console.log("altura invalida. Reinicie o sistema.");
         return;
     } else {
-        console.log("Sua altura é: " + altura + "cm.")
+        console.log("Sua altura é: " + altura + "m.")
     }
 
 
@@ -88,7 +88,7 @@ function iniciarTotem() {
     }
 
     if (idade >= 12 && altura >= 1.50) {
-        console.log("Olá, " + nome + "! Cadastro validado com sucesso. Seu acesso foi PERMITIDO. Divirta-se na MegaloDon!");
+        console.log("Olá," + nome + "! Cadastro validado com sucesso. Você se registrou com " + altura + "m de altura\ne com " + idade + " anos de idade, portanto, seu acesso foi PERMITIDO! Divirta-se na MegaloDon!")
     }
 
 
