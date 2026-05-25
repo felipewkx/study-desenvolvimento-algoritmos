@@ -19,7 +19,7 @@ function iniciarTotem() {
     if (nome == "") {
         console.log("Nome invalido. Reinicie o sistema.");
     } else {
-        console.log("Bem-vindo " + nome);
+        console.log("Bem-vindo " + nome + "!");
     }
 
     // =============================================================
@@ -35,7 +35,7 @@ function iniciarTotem() {
         console.log("Idade invalida. Reinicie o sistema.");
         return;
     } else {
-        console.log("Sua idade é: " + idade + " anos.")
+        console.log("Ok, você tem: " + idade + " anos de idade.")
     }
 
     // 3. DIGITE ABAIXO A ENTRADA E VALIDAÇÃO DA ALTURA
@@ -48,16 +48,16 @@ function iniciarTotem() {
     }
 
     if (altura <= 0) {
-        console.log("altura invalida. Reinicie o sistema.");
+        console.log("Altura inválida! Reinicie o sistema.");
         return;
     } else {
-        console.log("Sua altura é: " + altura + "m.")
+        console.log("Ok, você tem: " + altura + "m de altura.")
     }
 
 
     // PROBLEMA CARDÍACO
 
-    let cardiaco = readline.question("Voce tem problemas cardiacos? (sim/nao): ");
+    let cardiaco = readline.question("Voce tem problemas cardiacos? (s/n): ");
     let temProblema = (cardiaco === 'sim' || cardiaco === 's');
 
     if (!(cardiaco === "sim" || cardiaco === "s" || cardiaco === "nao" || cardiaco === "n")) {
@@ -93,16 +93,16 @@ function iniciarTotem() {
 
 
     if (altura >= 1.50 && idade < 12) {
-        console.log("[ACESSO NEGADO] - " + nome + ", você possui a altura necessária, mas não atingiu a idade mínima de 12 anos.");
+        console.log("[ACESSO NEGADO] - " + nome + ". Você possui a altura necessária, mas não atingiu a idade mínima de 12 anos.");
     }
 
 
     if (idade >= 12 && altura < 1.50) {
-        console.log("[ACESSO NEGADO] - " + nome + ", você possui a idade necessária, mas não atingiu a altura mínima de 1.50m.");
+        console.log("[ACESSO NEGADO] - " + nome + ". Você possui a idade necessária, mas não atingiu a altura mínima de 1.50m.");
     }
 
     if (idade < 12 && altura < 1.50) {
-        console.log("[ACESSO NEGADO] - " + nome + ", o acesso foi recusado porque você não possui a idade mínima (12 anos) e nem a altura mínima (1.50m).");
+        console.log("[ACESSO NEGADO] - " + nome + ". O acesso foi recusado porque você não possui a idade mínima (12 anos) e nem a altura mínima (1.50m).");
     }
 
 
