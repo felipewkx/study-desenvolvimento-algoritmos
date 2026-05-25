@@ -35,18 +35,23 @@ function iniciarTotem() {
         console.log("Idade invalida. Reinicie o sistema.");
         return;
     } else {
-        console.log("Sua idade é: " + idade + " . Você tem idade para curtir a Montanha!")
+        console.log("Sua idade é: " + idade)
     }
 
     // 3. DIGITE ABAIXO A ENTRADA E VALIDAÇÃO DA ALTURA
     let alturaDigitada = readline.question("Digite a altura do cliente: ");
     let altura = parseFloat(alturaDigitada.replace(',', '.'));
 
+    // Correção para valores tipo 170
+    if (altura >= 100) {
+        altura = altura / 100;
+    }
+
     if (altura <= 0) {
         console.log("altura invalida. Reinicie o sistema.");
         return;
     } else {
-        console.log("Sua altura é: " + altura + " . Você tem altura para curtir a Montanha!")
+        console.log("Sua altura é: " + altura + "cm.")
     }
 
 
@@ -80,8 +85,6 @@ function iniciarTotem() {
     if (temProblema) {
         console.log("Acesso negado: Risco cardíaco. Pela sua segurança, você não pode prosseguir!");
         return;
-    } else {
-        console.log("Acesso liberado!");
     }
 
     if (idade >= 12 && altura >= 1.50) {
