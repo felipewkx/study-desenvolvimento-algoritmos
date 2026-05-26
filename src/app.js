@@ -12,14 +12,20 @@ function iniciarTotem() {
 
     // EXEMPLO DE ENTRADA:
     // O readline.question() lê o que o usuário digita como TEXTO (String)
-    let nome = readline.question("Digite o nome do cliente: ");
 
-    // 1. FAÇA AQUI A VALIDAÇÃO DO NOME (Se está vazio)
-    if (nome == "") {
-        console.log("Nome invalido. Reinicie o sistema.");
-        return;
-    } else {
-        console.log("\nBem-vindo " + nome + "!");
+    // 1. DIGITE ABAIXO A ENTRADA E VALIDAÇÃO DO NOME
+    let nome;
+    let regexLetras = /^[A-Za-zÀ-ÿ\s]+$/; // Aceita letras, acentos e espaços
+
+    while (true) {
+        nome = readline.question("Digite o nome do cliente: ").trim();
+
+        if (!nome || !regexLetras.test(nome)) {
+            console.log("Nome inválido! Digite apenas letras. Tente novamente.\n");
+        } else {
+            console.log("\nBem-vindo " + nome + "!");
+            break; // Sai do laço se o nome for válido
+        }
     }
 
     // =============================================================
@@ -32,12 +38,19 @@ function iniciarTotem() {
     readline.question("\nPressione ENTER para continuar...");
     console.clear();
 
-    let idade = readline.questionInt("Digite a idade do cliente: ");
-    if (idade <= 0) {
-        console.log("Idade invalida. Reinicie o sistema.");
-        return;
-    } else {
-        console.log("\nOk, você tem: " + idade + " anos de idade.");
+    let idade;
+
+    while (true) {
+        idade = readline.questionInt("Digite a idade do cliente: ", {
+            limitMessage: "Idade invalida! A idade deve ser maior que zero.\n"
+        });
+
+        if (idade <= 0) {
+            console.log("Idade invalida! A idade deve ser maior que zero.\n");
+        } else {
+            console.log("\nOk, você tem: " + idade + " anos de idade.");
+            break;
+        }
     }
 
     // 3. DIGITE ABAIXO A ENTRADA E VALIDAÇÃO DA ALTURA
@@ -52,7 +65,7 @@ function iniciarTotem() {
     }
 
     if (altura <= 0) {
-        console.log("Altura inválida! Reinicie o sistema.");
+        console.log("Altura invalida! Reinicie o sistema.");
         return;
     } else {
         console.log("\nOk, você tem: " + altura + "m de altura.");
@@ -88,7 +101,7 @@ function iniciarTotem() {
     }
 
     if (idade >= 12 && altura < 1.50) {
-        console.log("[ACESSO NEGADO] - " + nome + ". Você possui a altura necessária, mas não atingiu a altura mínima de 1.50m.");
+        console.log("[ACESSO NEGADO] - " + nome + ". Você possui a idade necessária, mas não atingiu a altura mínima de 1.50m.");
     }
 
     if (idade < 12 && altura < 1.50) {
